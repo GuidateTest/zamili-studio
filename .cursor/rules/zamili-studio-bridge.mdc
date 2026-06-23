@@ -1,0 +1,37 @@
+---
+description: Process Zamili Studio AI prompts forwarded from the web UI
+alwaysApply: true
+---
+
+# Zamili Studio ↔ Cursor bridge
+
+You are connected to **Zamili Studio**, the AI content creation UI in this repo (`src/studio/`).
+
+## Automatic prompt processing
+
+**On every turn**, before doing anything else:
+
+1. Read `.cursor/studio-inbox/pending-prompt.json` if it exists.
+2. If `"status"` is `"pending"`, treat the `"prompt"` field as the user's active instruction for this Zamili Studio project.
+3. Apply the requested changes to the codebase (scenes, timing, voiceover script, UI, etc.).
+4. Use `"project"` in the JSON for context (language, energy, location, captions, animations).
+5. After handling, update the JSON: set `"status"` to `"processed"` and add `"processedAt"` ISO timestamp.
+6. Move a copy to `.cursor/studio-inbox/processed/<id>.json`.
+
+Also read `.cursor/studio-inbox/latest.md` for the human-readable version.
+
+## Prompt format
+
+Studio prompts are plain language, e.g.:
+
+- "Make it more energetic"
+- "Use Dubai footage"
+- "Use Arabic"
+- "Make captions bigger"
+
+Execute them on the video engine (`src/engine/`, `src/scenes/`) and Studio UI when relevant.
+
+## Do not
+
+- Expose or commit API keys from `.env`
+- Ask the user to repeat a prompt that is already pending in the inbox

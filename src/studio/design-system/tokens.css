@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="dark"] {
+  --zs-bg: #09090b;
+  --zs-bg-elevated: #111113;
+  --zs-bg-subtle: #18181b;
+  --zs-bg-hover: #1f1f23;
+  --zs-surface: #141416;
+  --zs-border: rgba(255, 255, 255, 0.08);
+  --zs-border-strong: rgba(255, 255, 255, 0.14);
+  --zs-text: #fafafa;
+  --zs-text-secondary: #d4d4d8;
+  --zs-text-muted: #71717a;
+  --zs-primary: #1a81ff;
+  --zs-primary-hover: #4da3ff;
+  --zs-primary-soft: rgba(26, 129, 255, 0.12);
+  --zs-secondary: #6366f1;
+  --zs-accent: #1e3a8a;
+  --zs-success: #22c55e;
+  --zs-warning: #f59e0b;
+  --zs-error: #ef4444;
+  --zs-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --zs-gradient: linear-gradient(135deg, #1a81ff 0%, #6366f1 50%, #1e3a8a 100%);
+}
+
+[data-theme="light"] {
+  --zs-bg: #fafaf9;
+  --zs-bg-elevated: #ffffff;
+  --zs-bg-subtle: #f4f4f5;
+  --zs-bg-hover: #e4e4e7;
+  --zs-surface: #ffffff;
+  --zs-border: rgba(0, 0, 0, 0.08);
+  --zs-border-strong: rgba(0, 0, 0, 0.12);
+  --zs-text: #09090b;
+  --zs-text-secondary: #3f3f46;
+  --zs-text-muted: #71717a;
+  --zs-primary: #1a81ff;
+  --zs-primary-hover: #1570e0;
+  --zs-primary-soft: rgba(26, 129, 255, 0.08);
+  --zs-secondary: #6366f1;
+  --zs-accent: #1e3a8a;
+  --zs-success: #16a34a;
+  --zs-warning: #d97706;
+  --zs-error: #dc2626;
+  --zs-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --zs-gradient: linear-gradient(135deg, #1a81ff 0%, #6366f1 50%, #1e3a8a 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--zs-bg);
+  color: var(--zs-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+::selection {
+  background: var(--zs-primary-soft);
+  color: var(--zs-text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--zs-border-strong);
+  border-radius: 999px;
+}

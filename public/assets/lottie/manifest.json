@@ -1,0 +1,22 @@
+{
+  "automation": {
+    "file": "automation.json",
+    "credit": "LottieFiles — AI/automation"
+  },
+  "success": {
+    "file": "success.json",
+    "credit": "LottieFiles — success check"
+  },
+  "sparkle": {
+    "file": "sparkle.json",
+    "credit": "LottieFiles — sparkle"
+  },
+  "data-flow": {
+    "file": "data-flow.json",
+    "credit": "LottieFiles — data/network"
+  },
+  "notification": {
+    "file": "notification.json",
+    "credit": "LottieFiles — notification bell"
+  }
+}

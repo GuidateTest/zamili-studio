@@ -1,0 +1,87 @@
+{
+  "name": "zamili-studio",
+  "version": "1.0.0",
+  "description": "Zamili Studio — AI-powered content creation for business owners, marketers, and creators",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@connectrpc/connect": "^2.1.2",
+    "@connectrpc/connect-node": "^2.1.2",
+    "@elevenlabs/elevenlabs-js": "^2.12.2",
+    "@remotion/cli": "4.0.482",
+    "@remotion/google-fonts": "^4.0.482",
+    "@remotion/media-utils": "4.0.482",
+    "@remotion/player": "4.0.482",
+    "@remotion/tailwind-v4": "4.0.482",
+    "@remotion/transitions": "^4.0.482",
+    "better-sqlite3": "^12.11.1",
+    "framer-motion": "^12.40.0",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.525.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.482",
+    "tailwindcss": "4.0.0"
+  },
+  "optionalDependencies": {
+    "@cursor/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.482",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.0.0",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/web": "0.0.166",
+    "@vitejs/plugin-react": "^4.7.0",
+    "dotenv": "^17.2.0",
+    "eslint": "9.19.0",
+    "music-metadata": "^11.8.3",
+    "prettier": "3.8.1",
+    "tsx": "^4.20.3",
+    "typescript": "5.9.3",
+    "vite": "^6.4.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:engine": "remotion studio",
+    "build:studio": "vite build",
+    "build:engine": "remotion bundle",
+    "preview": "vite preview",
+    "lint": "eslint src && tsc",
+    "setup": "node scripts/setup.mjs",
+    "postinstall": "node scripts/setup.mjs || true",
+    "cursor:bridge": "node scripts/cursor-bridge.mjs",
+    "download:videos": "node scripts/download-pexels-videos.mjs",
+    "download:lottie": "node scripts/download-lottie-assets.mjs",
+    "voiceover": "tsx scripts/generateVoiceover.ts",
+    "sfx": "tsx scripts/generateSfx.ts",
+    "audio": "npm run voiceover && npm run sfx",
+    "render:reel": "npx remotion render AIProjectReel out/ai-project-reel.mp4"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "keywords": [
+    "ai-video-generator",
+    "remotion",
+    "ai-reel-generator",
+    "react-video-editor",
+    "cursor-sdk",
+    "local-first",
+    "video-automation",
+    "social-media",
+    "elevenlabs",
+    "pexels",
+    "vite",
+    "sqlite"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuidateTest/zamili-studio.git"
+  },
+  "homepage": "https://github.com/GuidateTest/zamili-studio#readme",
+  "bugs": {
+    "url": "https://github.com/GuidateTest/zamili-studio/issues"
+  }
+}
