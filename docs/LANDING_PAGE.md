@@ -6,6 +6,7 @@ This project includes a production landing page inspired by enterprise video too
 
 - GitHub repository: `https://github.com/GuidateTest/zamili-studio`
 - GitHub Pages URL after deployment: `https://guidatetest.github.io/zamili-studio/`
+- GitHub Pages Studio route: `https://guidatetest.github.io/zamili-studio/?app=studio`
 - Local landing page: `http://localhost:3000/`
 - Local Studio app: `http://localhost:3000/studio`
 

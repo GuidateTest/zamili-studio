@@ -6,5 +6,6 @@ import "./design-system/tokens.css";
 const root = document.getElementById("root");
 if (root) {
   const path = window.location.pathname.replace(import.meta.env.BASE_URL, "/");
-  createRoot(root).render(path.startsWith("/studio") ? <StudioApp /> : <LandingPage />);
+  const showStudio = path.startsWith("/studio") || new URLSearchParams(window.location.search).get("app") === "studio";
+  createRoot(root).render(showStudio ? <StudioApp /> : <LandingPage />);
 }

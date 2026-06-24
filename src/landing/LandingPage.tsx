@@ -19,6 +19,7 @@ import "./landing.css";
 
 const base = import.meta.env.BASE_URL;
 const asset = (path: string) => `${base}${path.replace(/^\//, "")}`;
+const studioHref = base === "/" ? "/studio" : `${base}?app=studio`;
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -100,7 +101,7 @@ export const LandingPage: React.FC = () => {
             workflow for previewing, rendering, and shipping video assets.
           </p>
           <div className="hero-actions">
-            <a className="primary-cta" href={`${base}studio`}>
+            <a className="primary-cta" href={studioHref}>
               Open Studio
               <ArrowRight size={18} />
             </a>
@@ -246,7 +247,7 @@ export const LandingPage: React.FC = () => {
               View GitHub repo
               <ArrowRight size={18} />
             </a>
-            <a className="secondary-cta" href={`${base}studio`}>
+            <a className="secondary-cta" href={studioHref}>
               Open Studio app
             </a>
           </div>

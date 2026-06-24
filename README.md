@@ -7,6 +7,7 @@ Zamili Studio is designed for developers who want a self-hosted creative tool: p
 ## Links
 
 - Landing page: `https://guidatetest.github.io/zamili-studio/`
+- Static Studio route: `https://guidatetest.github.io/zamili-studio/?app=studio`
 - GitHub repo: `https://github.com/GuidateTest/zamili-studio`
 - Local landing page: `http://localhost:3000/`
 - Local Studio app: `http://localhost:3000/studio`
