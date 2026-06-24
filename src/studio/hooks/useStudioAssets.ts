@@ -7,6 +7,7 @@ export const useStudioAssets = (params: {
   type?: string;
   category?: string;
 }) => {
+  const { q, provider, type, category } = params;
   const [items, setItems] = useState<StudioAsset[]>([]);
   const [providers, setProviders] = useState<AssetProvider[]>([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ export const useStudioAssets = (params: {
     try {
       setLoading(true);
       setError(null);
-      const result = await studioApi.searchAssets(params);
+      const result = await studioApi.searchAssets({ q, provider, type, category });
       setItems(result.items);
       setProviders(result.providers);
     } catch (err) {
@@ -24,7 +25,7 @@ export const useStudioAssets = (params: {
     } finally {
       setLoading(false);
     }
-  }, [params.q, params.provider, params.type, params.category]);
+  }, [q, provider, type, category]);
 
   useEffect(() => {
     void refresh();

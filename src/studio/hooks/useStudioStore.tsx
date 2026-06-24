@@ -93,7 +93,7 @@ const aiResponses: Record<string, Partial<ProjectSettings>> = {
 const titleFromPrompt = (prompt: string) =>
   (prompt.trim().split(/\r?\n/).find(Boolean) ?? "Untitled Reel").slice(0, 64);
 
-const compositionFromPrompt = (_prompt: string) => "AIProjectReel";
+const compositionFromPrompt = () => "AIProjectReel";
 
 export const StudioProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -230,7 +230,7 @@ export const StudioProvider: React.FC<{ children: React.ReactNode }> = ({
           prompt: project.prompt,
           settings,
           status: "generating",
-          compositionId: compositionFromPrompt(project.prompt),
+          compositionId: compositionFromPrompt(),
         });
       } else {
         const { project: created } = await studioApi.createProject({
@@ -238,7 +238,7 @@ export const StudioProvider: React.FC<{ children: React.ReactNode }> = ({
           type: contentType ?? "reel",
           prompt: project.prompt,
           settings,
-          compositionId: compositionFromPrompt(project.prompt),
+          compositionId: compositionFromPrompt(),
         });
         projectId = created.id;
         setActiveProjectId(created.id);
@@ -288,7 +288,7 @@ export const StudioProvider: React.FC<{ children: React.ReactNode }> = ({
           prompt: project.prompt,
           settings: project,
           status: "ready",
-          compositionId: compositionFromPrompt(project.prompt),
+          compositionId: compositionFromPrompt(),
         })
         .catch(() => {});
     }

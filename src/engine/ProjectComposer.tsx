@@ -5,6 +5,11 @@ import {
   GeneratedProjectReel,
   type GeneratedProjectSettings,
 } from "./GeneratedProjectReel";
+import {
+  LandingHeroLoop,
+  LandingRenderLoop,
+  LandingWorkflowLoop,
+} from "../landing/LandingAnimations";
 
 const defaultReelProject = {
   prompt:
@@ -27,6 +32,34 @@ export const COMPOSITIONS = [
     width: 1080,
     height: 1920,
     label: "AI Project Reel",
+    defaultProps: { project: defaultReelProject },
+  },
+  {
+    id: "LandingHeroLoop",
+    component: LandingHeroLoop,
+    durationInFrames: 180,
+    fps: 30,
+    width: 960,
+    height: 540,
+    label: "Landing Hero Loop",
+  },
+  {
+    id: "LandingWorkflowLoop",
+    component: LandingWorkflowLoop,
+    durationInFrames: 180,
+    fps: 30,
+    width: 960,
+    height: 540,
+    label: "Landing Workflow Loop",
+  },
+  {
+    id: "LandingRenderLoop",
+    component: LandingRenderLoop,
+    durationInFrames: 180,
+    fps: 30,
+    width: 960,
+    height: 540,
+    label: "Landing Render Loop",
   },
 ] as const;
 
@@ -43,7 +76,7 @@ export const ProjectComposer: React.FC = () => (
         fps={c.fps}
         width={c.width}
         height={c.height}
-        defaultProps={{ project: defaultReelProject }}
+        defaultProps={"defaultProps" in c ? c.defaultProps : undefined}
       />
     ))}
   </>

@@ -4,8 +4,16 @@ Open-source AI video studio for building vertical reels, cinematic explainers, a
 
 Zamili Studio is designed for developers who want a self-hosted creative tool: prompt a video idea, preview it live, render an MP4, and keep projects on your own machine.
 
+## Links
+
+- Landing page: `https://guidatetest.github.io/zamili-studio/`
+- GitHub repo: `https://github.com/GuidateTest/zamili-studio`
+- Local landing page: `http://localhost:3000/`
+- Local Studio app: `http://localhost:3000/studio`
+
 ## Why Star This Repo
 
+- Enterprise-style React landing page with Remotion-generated WebM motion assets
 - AI reel generator with live Remotion preview
 - Prompt-to-project workflow powered by Cursor SDK / Cursor Agent
 - Local-first SQLite project database
@@ -71,6 +79,8 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+The landing page is served at `/`. The Studio app is served at `/studio`.
+
 ## Core Workflow
 
 1. Open **AI Reel Generator**.
@@ -87,8 +97,11 @@ The Studio stores projects locally in SQLite and render jobs under ignored local
 ```bash
 npm run dev                 # Start Zamili Studio UI
 npm run build:studio        # Build the Studio UI
+npm run build:pages         # Build for GitHub Pages
 npm run dev:engine          # Open Remotion Studio
 npm run render:reel         # Render AIProjectReel
+npm run render:landing      # Render landing WebM loops
+npm run deploy:check        # Render, lint, and build production outputs
 npm run audio               # Generate voiceover + SFX
 npm run setup               # Initialize local setup
 npm run lint                # ESLint + TypeScript
@@ -98,6 +111,7 @@ npm run lint                # ESLint + TypeScript
 
 ```text
 src/
+  landing/          Public landing page and Remotion WebM animations
   engine/           Remotion compositions, player, render metadata
   studio/           SaaS app UI, hooks, API client, design system
   scenes/           Scene implementations
@@ -111,9 +125,22 @@ scripts/
   cursor-bridge.mjs Cursor inbox bridge
   cursor-agent-run.mjs hidden Cursor SDK worker
 public/
+  landing/          Tracked generated WebM loops for the landing page
   logo.png
   zamili-studios.png
 ```
+
+## Landing Page
+
+The landing page is designed to communicate the platform at a professional, enterprise level: premium hero section, slick generated animation loops, developer CTAs, workflow explanation, stack proof, and deployment documentation.
+
+See `docs/LANDING_PAGE.md` for:
+
+- tools used
+- generated animation assets
+- deployment commands
+- GitHub Pages setup
+- local routes and public links
 
 ## API Routes
 
@@ -143,6 +170,7 @@ This repo is configured to avoid publishing private data:
 - render outputs under `out/` are ignored
 - Cursor inbox runtime prompts are ignored
 - generated audio/video assets are ignored
+- only generic landing loops under `public/landing/*.webm` are tracked
 - private Zamili media under `public/zamili/` is ignored
 - large local ChatGPT image drops are ignored
 

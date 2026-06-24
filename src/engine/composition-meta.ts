@@ -15,6 +15,7 @@ export type CompositionScene = {
 };
 
 export const getCompositionScenes = (project?: GeneratedProjectSettings): CompositionScene[] => {
+  void project;
   return GENERATED_REEL_SCENES.map((scene, index) => ({
     id: scene.id,
     label: scene.label,
@@ -24,11 +25,15 @@ export const getCompositionScenes = (project?: GeneratedProjectSettings): Compos
   }));
 };
 
-export const getCompositionDuration = (_project?: GeneratedProjectSettings) =>
-  GENERATED_REEL_DURATION;
+export const getCompositionDuration = (project?: GeneratedProjectSettings) => {
+  void project;
+  return GENERATED_REEL_DURATION;
+};
 
-export const getCompositionFps = (_project?: GeneratedProjectSettings) =>
-  GENERATED_REEL_FPS;
+export const getCompositionFps = (project?: GeneratedProjectSettings) => {
+  void project;
+  return GENERATED_REEL_FPS;
+};
 
 export const FPS = GENERATED_REEL_FPS;
 export const TOTAL_DURATION_FRAMES = GENERATED_REEL_DURATION;

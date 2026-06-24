@@ -1,9 +1,8 @@
-import manifest from "../../public/assets/videos/manifest.json";
 import { staticFile } from "remotion";
 
-export type VideoKey = keyof typeof manifest;
+export type VideoKey = string;
 
-export const PEXELS_VIDEOS = manifest as Record<
+export const PEXELS_VIDEOS: Record<
   string,
   {
     file: string;
@@ -12,7 +11,7 @@ export const PEXELS_VIDEOS = manifest as Record<
     pexelsId?: number;
     photographer?: string;
   }
->;
+> = {};
 
 export const videoSrc = (key: VideoKey): string => {
   const entry = PEXELS_VIDEOS[key];

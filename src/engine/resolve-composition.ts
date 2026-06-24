@@ -1,10 +1,11 @@
 import type { GeneratedProjectSettings } from "./reel-config";
 import { COMPOSITIONS } from "./ProjectComposer";
 
-export const resolveCompositionId = (_project: GeneratedProjectSettings) => "AIProjectReel";
+export const resolveCompositionId = () => "AIProjectReel";
 
 export const resolveComposition = (project: GeneratedProjectSettings) => {
-  const id = resolveCompositionId(project);
+  void project;
+  const id = resolveCompositionId();
   return COMPOSITIONS.find((c) => c.id === id) ?? COMPOSITIONS[0];
 };
 

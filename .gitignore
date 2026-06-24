@@ -51,6 +51,8 @@ public/**/*.wav
 public/**/*.mp4
 public/**/*.mov
 public/**/*.webm
+!public/landing/
+!public/landing/*.webm
 
 # OS files
 .DS_Store

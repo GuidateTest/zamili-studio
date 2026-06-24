@@ -46,6 +46,7 @@
     "dev": "vite",
     "dev:engine": "remotion studio",
     "build:studio": "vite build",
+    "build:pages": "vite build --base=/zamili-studio/",
     "build:engine": "remotion bundle",
     "preview": "vite preview",
     "lint": "eslint src && tsc",
@@ -57,7 +58,12 @@
     "voiceover": "tsx scripts/generateVoiceover.ts",
     "sfx": "tsx scripts/generateSfx.ts",
     "audio": "npm run voiceover && npm run sfx",
-    "render:reel": "npx remotion render AIProjectReel out/ai-project-reel.mp4"
+    "render:reel": "npx remotion render AIProjectReel out/ai-project-reel.mp4",
+    "render:landing:hero": "npx remotion render LandingHeroLoop public/landing/hero-loop.webm --codec=vp8",
+    "render:landing:workflow": "npx remotion render LandingWorkflowLoop public/landing/workflow-loop.webm --codec=vp8",
+    "render:landing:render": "npx remotion render LandingRenderLoop public/landing/render-loop.webm --codec=vp8",
+    "render:landing": "npm run render:landing:hero && npm run render:landing:workflow && npm run render:landing:render",
+    "deploy:check": "npm run render:landing && npm run lint && npm run build:studio && npm run build:pages"
   },
   "sideEffects": [
     "*.css"

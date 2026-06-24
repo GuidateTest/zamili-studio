@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2018",
-    "module": "commonjs",
+    "module": "ESNext",
     "jsx": "react-jsx",
     "strict": true,
     "noEmit": true,
@@ -11,7 +11,8 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "noUnusedLocals": true,
-    "types": ["node"]
+    "moduleResolution": "Bundler",
+    "types": ["node", "vite/client"]
   },
   "exclude": ["remotion.config.ts", "vite.config.ts", "dist-studio"]
 }
